@@ -4,13 +4,18 @@ with open('input.txt') as fp:
    temp_value = 0
    line = fp.readline()
    while line:
-        print(line)
         if line == "\n":
             elves_sum.append(temp_value)
             temp_value = 0
-            print()
         else:
             temp_value += int(line)
         line = fp.readline()
             
-print(max(elves_sum))
+first = max(elves_sum)
+elves_sum.remove(max(elves_sum))
+second = max(elves_sum)
+elves_sum.remove(max(elves_sum))
+third = max(elves_sum)
+
+res = first + second + third
+print(res)
